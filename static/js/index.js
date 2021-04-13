@@ -4,7 +4,7 @@ function Encender_LED1() {
 	//alert("led on");
 	console.log("led uno");
 	//document.getElementById("sensor").innerHTML="Encendido";
-	message = new Paho.MQTT.Message("Encendido");
+	message = new Paho.MQTT.Message("Encendido sensor1");
     	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
   
@@ -12,7 +12,7 @@ function Encender_LED1() {
 function Encender_LED2(){	
 	//alert("led off");
 	console.log("led dos");
-	message = new Paho.MQTT.Message("Encendido");
+	message = new Paho.MQTT.Message("Encendido sensor2");
     	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
@@ -81,7 +81,7 @@ function HISTORIAL(){
 	    document.getElementById("history").innerHTML = "";
     }
     if(sms=="Sensor 2"){
-	    document.getElementById("sensor").innerHTML = sms;
+	    document.getElementById("sensor2").innerHTML = sms;
 	    document.getElementById("history").innerHTML = "";
     }
      if(sms=="Sensor 1"){
