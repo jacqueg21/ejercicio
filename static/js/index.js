@@ -5,7 +5,7 @@ function Encender_LED() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="Encendido";
 	message = new Paho.MQTT.Message("Encendido");
-    	message.destinationName = "sdarmas.fie@unach.edu.ec/test1";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
     	client.send(message);
   
 }
@@ -13,14 +13,14 @@ function Apagar_LED(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("Apagado");
-    	message.destinationName = "sdarmas.fie@unach.edu.ec/test1";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 function HISTORIAL(){	
 	console.log("Historial Datos");
 	message = new Paho.MQTT.Message("LEDHISTORY");
-    	message.destinationName = "sdarmas.fie@unach.edu.ec/test1";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
     	client.send(message);
 }
 
@@ -56,7 +56,7 @@ function HISTORIAL(){
 	
     client.subscribe("sdarmas.fie@unach.edu.ec/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "sdarmas.fie@unach.edu.ec/test1";
+    message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
     client.send(message);
 	
   }
