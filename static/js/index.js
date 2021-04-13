@@ -5,7 +5,7 @@ function Encender_LED() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="Encendido";
 	message = new Paho.MQTT.Message("Encendido");
-    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
   
 }
@@ -13,14 +13,14 @@ function Apagar_LED(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("Apagado");
-    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
 function HISTORIAL(){	
 	console.log("Historial Datos");
 	message = new Paho.MQTT.Message("LEDHISTORY");
-    	message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
+    	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
 }
 
@@ -40,8 +40,8 @@ function HISTORIAL(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "sdarmas.fie@unach.edu.ec",
-    password: "jacque1234",
+    userName: "jcguailla.fie@unach.edu.ec",
+    password: "cris71n4",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -54,9 +54,9 @@ function HISTORIAL(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("sdarmas.fie@unach.edu.ec/test");
+    client.subscribe("jcguailla.fie@unach.edu.ec/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "jcguailla.fie@unach.edu.ec/temanew2";
+    message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     client.send(message);
 	
   }
