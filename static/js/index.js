@@ -1,18 +1,18 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function Encender_LED() {
+function Encender_LED1() {
 	//alert("led on");
-	console.log("led on");
+	console.log("led uno");
 	//document.getElementById("sensor").innerHTML="Encendido";
 	message = new Paho.MQTT.Message("Encendido");
     	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
   
 }
-function Apagar_LED(){	
+function Encender_LED2(){	
 	//alert("led off");
-	console.log("led off");
-	message = new Paho.MQTT.Message("Apagado");
+	console.log("led dos");
+	message = new Paho.MQTT.Message("Encendido");
     	message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
@@ -76,19 +76,19 @@ function HISTORIAL(){
   // called when a message arrives
   function onMessageArrived(message) {
     sms=(message.payloadString);
-    if(sms=="Muy Alto"){
+    if(sms=="Sensor 1"){
 	    document.getElementById("sensor").innerHTML = sms;
 	    document.getElementById("history").innerHTML = "";
     }
-    if(sms=="Muy Bajo"){
+    if(sms=="Sensor 2"){
 	    document.getElementById("sensor").innerHTML = sms;
 	    document.getElementById("history").innerHTML = "";
     }
-     if(sms=="Muy Alto"){
+     if(sms=="Sensor 1"){
 	    document.getElementById("history").innerHTML = sms;
     }
 	  
-     if(sms=="Muy Bajo"){
+     if(sms=="Sensor 2"){
 	    document.getElementById("history").innerHTML = sms;
     }
   }
