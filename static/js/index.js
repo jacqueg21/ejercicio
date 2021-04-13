@@ -84,7 +84,11 @@ function HISTORIAL(){
 	    document.getElementById("sensor").innerHTML = sms;
 	    document.getElementById("history").innerHTML = "";
     }
-    else{
+     if(sms=="Muy Alto"){
+	    document.getElementById("history").innerHTML = sms;
+    }
+	  
+     if(sms=="Muy Bajo"){
 	    document.getElementById("history").innerHTML = sms;
     }
   }
