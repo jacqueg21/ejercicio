@@ -24,12 +24,6 @@ function HISTORIAL(){
     	client.send(message);
 }
 
-
-
-
-
-
-
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
