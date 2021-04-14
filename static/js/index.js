@@ -1,25 +1,19 @@
 var cont=0;
-function estado() {
+function SENSOR1() {
          //alert("clic");
-        console.log("sensoruno");
-        message = new Paho.MQTT.Message("sensoruno");
+        console.log("Encendido sensor1");
+        message = new Paho.MQTT.Message("Encendido sensor1");
         message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
         client.send(message);
   
 }
-function historial(){	
+function SENSOR2(){	
         //alert("clic");
-        console.log("sensordos");
-        message = new Paho.MQTT.Message("sensordos");
+        console.log("Encendido sensor2");
+        message = new Paho.MQTT.Message("Encendido sensor2");
         message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
         client.send(message);
-        //document.getElementById("sensor").innerHTML="led off";
 }
-
-
-
-
-
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -47,7 +41,9 @@ function historial(){
     console.log("Conectado...");
 	
     client.subscribe("jcguailla.fie@unach.edu.ec/test1");
-    
+    message = new Paho.MQTT.Message("hola desde la web");
+    message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
+    client.send(message);
     
 	
   }
@@ -68,12 +64,12 @@ function historial(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-          historiales=message.payloadString;
-          if(historiales[0]=="0"){
-              document.getElementById("hist1").innerHTML=historiales;  
+          mensaje=message.payloadString;
+          if(mensaje[0]=="0"){
+              document.getElementById("sen").innerHTML=mensaje;  
           }
           if(historiales[0]=="1"){
-              document.getElementById("hist2").innerHTML=historiales;
+              document.getElementById("sen2").innerHTML=mensaje;
           }
           
   }
