@@ -3,7 +3,7 @@ function estado() {
          //alert("clic");
         console.log("sensoruno");
         message = new Paho.MQTT.Message("sensoruno");
-        message.destinationName = "jguailla.fie@unach.edu.ec/test1";
+        message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
         client.send(message);
   
 }
@@ -11,7 +11,7 @@ function historial(){
         //alert("clic");
         console.log("sensordos");
         message = new Paho.MQTT.Message("sensordos");
-        message.destinationName = "jguailla.fie@unach.edu.ec/test1";
+        message.destinationName = "jcguailla.fie@unach.edu.ec/test1";
         client.send(message);
         //document.getElementById("sensor").innerHTML="led off";
 }
@@ -32,7 +32,7 @@ function historial(){
 
   var options = {
    useSSL: false,
-    userName: "jguailla.fie@unach.edu.ec",
+    userName: "jcguailla.fie@unach.edu.ec",
     password: "cris71n4",
     onSuccess:onConnect,
     onFailure:doFail
@@ -46,7 +46,7 @@ function historial(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("jguailla.fie@unach.edu.ec/test1");
+    client.subscribe("jcguailla.fie@unach.edu.ec/test1");
     
     
 	
