@@ -68,7 +68,7 @@ function SENSOR2(){
           if(mensaje[0]=="0"){
               document.getElementById("sen").innerHTML=mensaje;  
           }
-          if(historiales[0]=="1"){
+          if(mensaje[0]=="1"){
               document.getElementById("sen2").innerHTML=mensaje;
           }
           
